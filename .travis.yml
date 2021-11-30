@@ -22,4 +22,3 @@ deploy:
   secret_access_key: $aws-secret-key
 
 
-http://devops-env.eba-hc22vwfm.us-east-2.elasticbeanstalk.com/
