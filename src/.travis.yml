@@ -1,0 +1,10 @@
+language: generic 
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t devops -f dockerfile.dev . 
+
+script:
+  - docker run -e CI=true devops npm run test
