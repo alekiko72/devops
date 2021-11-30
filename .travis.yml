@@ -8,3 +8,21 @@ before_install:
 
 script:
   - docker run -e CI=true devops npm run test
+
+deploy: 
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "devops"
+  env: "Devops-env"
+  bucket_name: "elasticbeanstalk-us-east-2-783401100010"
+  bucket_path: "devops"
+  on:
+    branch: master
+
+
+
+access_key_id: $aws-access-key
+secret_access_key: $aws-secret-key
+
+
+http://devops-env.eba-hc22vwfm.us-east-2.elasticbeanstalk.com/
